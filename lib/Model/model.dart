@@ -106,11 +106,13 @@ class Phonetic {
 
   factory Phonetic.fromJson(Map<String, dynamic> json) => Phonetic(
         text: json["text"],
-        audio: json["audio"] == null ? null : json["audio"],
+        audio: json["audio"],
       );
 
   Map<String, dynamic> toJson() => {
         "text": text,
-        "audio": audio == null ? null : audio,
+        "audio": newMethod,
       };
+
+  String? get newMethod => audio;
 }
